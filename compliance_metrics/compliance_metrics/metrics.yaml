@@ -1,0 +1,37 @@
+end_tracking_date: 2024-12-31
+metrics:
+- data_type: enum
+  name: Gym
+  goal:
+    target_value: 'Yes'
+  values:
+  - 'Yes'
+  - 'No'
+- data_type: enum
+  name: Study System Design
+  goal:
+    target_value: 'Yes'
+  values:
+  - 'Yes'
+  - 'No'
+- data_type: int
+  name: Leet Code Problems Completed
+  values: null
+  goal:
+    target_value: 3
+    operator: GTE
+- data_type: int
+  name: Hours Of Sleep
+  values: null
+  goal:
+    target_value: 7
+    operator: GTE
+- data_type: float
+  name: Weight
+  values: null
+  goal:
+    target_value: 170
+    operator: GT
+sheet_id: 1EhPrWTl8zOs4sKiDMsDY-o5ajkMRucoIQCT4RnCihxU
+sheet_name: Sheet Name
+start_tracking_date: 2024-11-01
