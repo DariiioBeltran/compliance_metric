@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jinja2 Example</title>
+</head>
+<body>
+    <h1>REPORT!</h1>
+    {% for metric in metrics %}
+        <p>{{ metric.metric_name }}</p>
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,8 @@
+setup-dev:
+    brew install just
+    brew install wkhtmltopdf
+    curl -sSL https://install.python-poetry.org | python3 -
+    poetry install
+
+compliance-metrics COMMAND:
+    poetry run python compliance_metrics/ComplianceMetrics.py {{COMMAND}}
