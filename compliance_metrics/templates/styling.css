@@ -1,0 +1,23 @@
+.red-bg {
+    background-color: red;
+}
+
+table {
+    margin: 0 auto;
+}
+
+td {
+    border-bottom: 1px solid black;
+    border-collapse: collapse;
+    padding-left: 10px;
+    padding-right: 50px;
+    width: 50%;
+}
+
+.orange-bg {
+    background-color: #F05D23;
+}
+
+.gray-bg {
+    background-color: #E4E6C3;
+}

@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 import datetime
-from typing import Optional
+from typing import Optional, Literal
 import enum
 
 class Operators(enum.Enum):
@@ -11,14 +11,14 @@ class Operators(enum.Enum):
 
 
 class Goal(BaseModel):
-    target_value: str | int
+    target_value: str | int | float
     operator: Optional[Operators] = None
     # TODO: We can create histograms if we want allow for tracking of enums
 
 
 class Task(BaseModel):
     name: str
-    data_type: str
+    data_type: Literal["int", "float", "enum"]
     values: Optional[list[str]] = None
     goal: Goal
 
@@ -41,3 +41,4 @@ class MetricContext(BaseModel):
 
 class TemplateContext(BaseModel):
     metrics: list[MetricContext]
+    css_path: str

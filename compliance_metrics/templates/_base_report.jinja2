@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Jinja2 Example</title>
+    <link rel="stylesheet" href="{{ css_path }}">
 </head>
 <body>
-    <h1>REPORT!</h1>
-    {% for metric in metrics %}
-        <p>{{ metric.metric_name }}</p>
-    {% endfor %}
+    <div>
+        <h1 style="text-align: center;"><strong>Compliance Report</strong></h1>
+
+        {% include "_intro_section.jinja2" %}
+
+        {% for metric in metrics %}
+            {% with m=metric %}
+                {% include "_metric_details.jinja2" %}
+            {% endwith %}
+        {% endfor %}
+    </div>
 </body>
 </html>
