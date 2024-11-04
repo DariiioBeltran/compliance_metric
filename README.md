@@ -37,3 +37,5 @@ After you modify the `metrics.yaml` to include everything you want to track, run
 
 ### report
 Once the defined period of time has passed, run `just compliance-metrics report`. This command will pull down all the data from the Google Sheet and generate the pdf. The report be created in the `reports` directory.
+
+# (**Sample Report**)[https://github.com/DariiioBeltran/compliance_metrics/blob/main/compliance_metrics/reports/sample_report.pdf]
