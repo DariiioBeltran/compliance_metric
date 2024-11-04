@@ -1,0 +1,61 @@
+<div>
+    <h3>Compliance Percentage</h3>
+    {% set number_of_metrics = metrics | length %}
+    <p>
+        During this season we were tracking the following metrics: {% for metric in metrics[:number_of_metrics-2] %}{{ metric.metric_name }}, {% endfor %}
+        and {{ metrics[-1].metric_name }}. Let's start this analysis by looking at your <strong>compliance percentage*</strong> for each of the metrics 
+        we're tracking. This is particularly useful for metrics that have boolean values, that is, when we're tracking the completion of a task. A high 
+        compliance percentage indicates that you're very disciplined with regards to that task. A low percentage indicates that you might need to dedicate 
+        more time to this area, or reconsider if it's something you really need, like, or want.
+    </p>
+    <p>
+        <strong>*Compliance percentage</strong> is defined as the percentage of days you met your goal for that metric.
+    </p>
+
+    <table>
+        <tr class="orange-bg">
+            <td style="color: white;"><strong>Metric</strong></td>
+            <td style="color: white;"><strong>Compliance Percentage</strong></td>
+        </tr>
+        {% for metric in metrics %}
+            {% if metric.compliance_pct %}
+                <tr class="gray-bg">
+                    <td style="padding-right: 50px">{{ metric.metric_name }}</td>
+                    <td style="padding-right: 50px">{{ metric.compliance_pct | round(2) }}%</td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+    </table>
+
+    {% set comp_pct_maxima = metrics | get_min_and_max_metrics_by_field("compliance_pct") %}
+    <p>
+        <strong>Highlights</strong><br />
+        You achieved your highest compliance percentage for {{ comp_pct_maxima.maximum.metric_name }}, great job! On the other hand, perhaps you should set aside some time to think about your 
+        approach to {{ comp_pct_maxima.minimum.metric_name }}. Spend an afternoon thinking about {{ comp_pct_maxima.minimum.metric_name }}, is this something you really care about or is this just burning up time from your schedule? 
+        If this is a non-negotiable, try to pinpoint why you've been having a hard time sticking to your regiment. Common reasons for this are often related to 
+        doing too much of it. If this is a new endeavour, try to ease your way into it; if this isn't something you absolutely love try to avoid diving in head 
+        first since this will likely result in a poor compliance percentage. 
+    <p>
+    
+    <h3>Averages</h3>
+    <p>
+        It's also helpful to look at the averages of all our numerical metrics. When analyzing habits it's important to keep the big picture in mind. You 
+        should understand that there isn't a single metric which is objectively the most important. With that being said, averages give us some insight about 
+        our day to day. Strive to improve (increase or decrease) these averages and don't loose too much sleep over a single bad performance.
+    </p>
+
+    <table>
+        <tr class="orange-bg">
+            <td style="color: white;"><strong>Metric</strong></td>
+            <td style="color: white;"><strong>Average</strong></td>
+        </tr>
+        {% for metric in metrics %}
+            {% if metric.average %}
+                <tr class="gray-bg">
+                    <td style="padding-right: 50px">{{ metric.metric_name }}</td>
+                    <td style="padding-right: 50px">{{ metric.average | round(2) }}</td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+    </table>
+</div>

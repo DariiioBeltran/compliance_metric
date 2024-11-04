@@ -17,7 +17,7 @@ def get_sheet(sheet_id: str) -> Spreadsheet:
     return client.open_by_key(sheet_id)
 
 def create_sheet(sheet_name: str) -> Spreadsheet:
-    scopes = ["https://www.googleapis.com/auth/spreadsheets", 'https://www.googleapis.com/auth/drive']
+    scopes = ["https://www.googleapis.com/auth/spreadsheets", "https://www.googleapis.com/auth/drive"]
     creds = Credentials.from_service_account_file("credentials.json", scopes=scopes)
     client = gspread.authorize(creds)
     return client.create(sheet_name)

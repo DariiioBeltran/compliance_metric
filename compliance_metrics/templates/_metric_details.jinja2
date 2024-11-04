@@ -1,0 +1,17 @@
+<div>
+    <h2><strong>{{ m.metric_name }}</strong></h2>
+    <p>
+        Let's take a slightly deeper look at {{ m.metric_name }}. {% if m.compliance_pct %}You achieved a compliance 
+        percentage of {{ m.compliance_pct | round(2) }}% for this task{% endif %}{% if m.average %} with an average of 
+        {{ m.average | round(2) }} per day{% endif %}. Here's a couple of plots that you might want to look at.
+    </p>
+    <div>
+        {% if m.heatmap_file_name %}
+            <img src="{{ m.heatmap_file_name }}">
+        {% endif %}
+
+        {% if m.linechart_file_name %}
+            <img src="{{ m.linechart_file_name }}">
+        {% endif %}
+    </div>
+</div>

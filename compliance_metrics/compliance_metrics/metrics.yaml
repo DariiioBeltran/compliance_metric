@@ -30,7 +30,7 @@ metrics:
   name: Weight
   values: null
   goal:
-    target_value: 170
+    target_value: 150
     operator: GT
 sheet_id: 1EhPrWTl8zOs4sKiDMsDY-o5ajkMRucoIQCT4RnCihxU
 sheet_name: Sheet Name
