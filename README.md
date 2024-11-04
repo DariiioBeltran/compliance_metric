@@ -36,6 +36,4 @@ When we calculate the compliance rates we compare every day's entry to the Goal 
 After you modify the `metrics.yaml` to include everything you want to track, run `just compliance-metrics setup`. This command will create a Google Sheet that with a column for every one of the tasks you want to track. You should receive an email granting you access to the newly created spreadsheet soon after running the command. Please don't alter the column names or general structure of the sheet as it will likely break the `report` logic.
 
 ### report
-Once the defined period of time has passed, run `just compliance-metrics report`. This command will pull down all the data from the Google Sheet and generate the pdf. The report be created in the `reports` directory.
-
-# (**Sample Report**)[https://github.com/DariiioBeltran/compliance_metrics/blob/main/compliance_metrics/reports/sample_report.pdf]
+Once the defined period of time has passed, run `just compliance-metrics report`. This command will pull down all the data from the Google Sheet and generate the pdf. The report be created in the `reports` directory. You can see a sample report **[here](https://github.com/DariiioBeltran/compliance_metrics/blob/main/compliance_metrics/reports/sample_report.pdf)**
